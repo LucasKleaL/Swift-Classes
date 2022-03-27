@@ -10,11 +10,12 @@ import UIKit
 class ViewController: UIViewController {
     
     var actualValue:String?
-    var val1:Int?
-    var val2:Int?
+    var val1:Float?
+    var val2:Float?
     var operation:String?
     var result:Float?
     var isResult:Bool?
+    var isDecimal:Bool?
     var visorText:String?
     @IBOutlet weak var textLabel: UILabel!
     
@@ -22,6 +23,7 @@ class ViewController: UIViewController {
         actualValue = ""
         visorText = ""
         isResult = false
+        isDecimal = false
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
@@ -132,7 +134,7 @@ class ViewController: UIViewController {
             isResult = true
         }
         
-        val2 = Int(actualValue!)
+        val2 = Float(actualValue!)
         actualValue = ""
         
         if (operation == "sum") {
@@ -162,7 +164,7 @@ class ViewController: UIViewController {
         operation = "sum"
         visorText! += " + "
         textLabel.text = visorText!
-        val1 = Int(actualValue!)
+        val1 = Float(actualValue!)
         actualValue = ""
     }
     
@@ -170,7 +172,7 @@ class ViewController: UIViewController {
         operation = "subtract"
         visorText! += " - "
         textLabel.text = visorText!
-        val1 = Int(actualValue!)
+        val1 = Float(actualValue!)
         actualValue = ""
     }
     
@@ -178,7 +180,7 @@ class ViewController: UIViewController {
         operation = "multiply"
         visorText! += " * "
         textLabel.text = visorText!
-        val1 = Int(actualValue!)
+        val1 = Float(actualValue!)
         actualValue = ""
     }
     
@@ -186,13 +188,20 @@ class ViewController: UIViewController {
         operation = "divide"
         visorText! += " / "
         textLabel.text = visorText!
-        val1 = Int(actualValue!)
+        val1 = Float(actualValue!)
         actualValue = ""
     }
     
     @IBAction func buttonClear(_ sender: UIButton) {
         visorText = ""
         actualValue = ""
+        textLabel.text = visorText!
+    }
+    
+    @IBAction func buttonDot(_ sender: UIButton) {
+        isDecimal = true
+        actualValue! += "."
+        visorText! += "."
         textLabel.text = visorText!
     }
     
