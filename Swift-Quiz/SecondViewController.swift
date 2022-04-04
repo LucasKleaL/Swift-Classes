@@ -10,12 +10,18 @@ import UIKit
 class SecondViewController: UIViewController {
     
     public var information = ""
+    public var questionsCounter:Int = 0
+    public var currentQuestion:Int = 0
+    var questions:[Array] = [["Que carro é esse?", "Fusca", "M4", "Gol G6", "Z4", "M4"], []]
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageLabel: UIImageView!
     @IBOutlet weak var buttonIniciar: UIButton!
-    
-    var questions:[String] = ["Pergunta 1", "Pergunta 2", "Pergunta3"]
-    var counter:Int = 0
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var firstAnswerLabel: UILabel!
+    @IBOutlet weak var secondAnswerLabel: UILabel!
+    @IBOutlet weak var thirdAnswerLabel: UILabel!
+    @IBOutlet weak var fourthAnswerLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +30,12 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func buttonA(_ sender: Any) {
+        let userAwser = questions[currentQuestion][1]
+        let correctAwser = questions[currentQuestion][5]
+        print("correct \(correctAwser) user \(userAwser)")
+        if (userAwser == correctAwser) {
+            
+        }
     }
     
     @IBAction func buttonB(_ sender: Any) {
@@ -36,19 +48,20 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func buttonIniciarPressed(_ sender: Any) {
-        print("buttonPressed")
-        buttonIniciar.setTitle("Próximo", for: .normal)
+        if (questionsCounter == 0) {
+            buttonIniciar.setTitle("Próximo", for: .normal)
+        }
+        currentQuestion = questionsCounter
+        questionLabel.text! = questions[questionsCounter][0]
+        firstAnswerLabel.text! = questions[questionsCounter][1]
+        secondAnswerLabel.text! = questions[questionsCounter][2]
+        thirdAnswerLabel.text! = questions[questionsCounter][3]
+        fourthAnswerLabel.text! = questions[questionsCounter][4]
+        
+        questionsCounter += 1
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+ 	
 
 }
