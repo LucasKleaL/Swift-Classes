@@ -12,6 +12,7 @@ class SecondViewController: UIViewController {
     public var information = ""
     public var questionsCounter:Int = 0
     public var currentQuestion:Int = 0
+    public var totalPontos:Int = 0
     var questions:[[String]] = [ //questionLabel, firstAwser, secondAwser, thirdAwser, fourthAwser, correctAwser
         ["Que carro é esse?", "Fusca", "M4", "Gol G6", "Z4", "M4"],
         ["Qual modelo de Tesla é esse?", "Model Y", "Model 3", "Roadster", "Model 1", "Model 3"],
@@ -88,6 +89,12 @@ class SecondViewController: UIViewController {
             buttonB.isEnabled = false
             buttonC.isEnabled = false
             buttonD.isEnabled = false
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let secondVC = storyboard.instantiateViewController(identifier: "ResultViewController")
+
+                    show(secondVC, sender: self)
+            
         }
         questionsCounter += 1
     }
@@ -99,6 +106,7 @@ class SecondViewController: UIViewController {
         if (userAwser == correctAwser) {
             correctAwserLabel.text = "Resposta correta!"
             correctAwserLabel.backgroundColor = UIColor.green
+            totalPontos += 1
         }
         else {
             correctAwserLabel.text = "Resposta errada!"
@@ -118,4 +126,15 @@ class SecondViewController: UIViewController {
         correctAwserLabel.text = ""
         correctAwserLabel.backgroundColor = UIColor.clear
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if let destination = segue.destination as?
+                
+                ResultViewController{
+                destination.totalPontos = totalPontos
+                destination.username = information
+            }
+    }
+
+    
 }
