@@ -23,6 +23,8 @@ class ViewController: UIViewController {
             present(alert, animated: true)
             return
         }
+        DataModel.shared().nome = nameTextField.text!
+        DataModel.shared().placar = 0
     }
 
 

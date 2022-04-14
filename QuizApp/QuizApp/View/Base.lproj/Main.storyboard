@@ -13,17 +13,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezZ-xf-osM">
-                                <rect key="frame" x="168.5" y="76" width="77" height="47"/>
+                                <rect key="frame" x="168.5" y="32" width="77" height="47"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="LNZ-Wy-9y5">
-                                <rect key="frame" x="32" y="348" width="350" height="206.5"/>
+                                <rect key="frame" x="32" y="304" width="350" height="206.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digite o seu nome:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IA8-8K-tSI">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="41.5"/>
@@ -59,6 +59,7 @@
                             <constraint firstItem="LNZ-Wy-9y5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Uoi-ON-BLb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Dal-eI-ouD"/>
                     <connections>
                         <outlet property="nameTextField" destination="9xd-iS-J2Q" id="sYP-Rc-wuN"/>
                     </connections>
@@ -150,20 +151,69 @@
             </objects>
             <point key="canvasLocation" x="840.57971014492762" y="32.8125"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="7ac-IQ-3I0">
+        <!--Score Table View Controller-->
+        <scene sceneID="6cK-ln-kbU">
             <objects>
-                <viewController id="1f4-8n-t2D" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9Hy-VV-M27">
+                <tableViewController storyboardIdentifier="ScoreViewController" id="EPy-vK-vNY" customClass="ScoreTableViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1Yf-u6-qMj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Pyr-Mn-gZ4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jbQ-SL-jhb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QuW-68-e1s">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="nOh-Jk-SXS">
+                            <rect key="frame" x="0.0" y="154.5" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZvU-jc-Yya">
+                                    <rect key="frame" x="139" y="6.5" width="136" height="31"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Jogar novamente"/>
+                                    <connections>
+                                        <segue destination="BYZ-38-t0r" kind="show" id="FPa-x5-Qg6"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="ZvU-jc-Yya" firstAttribute="centerY" secondItem="nOh-Jk-SXS" secondAttribute="centerY" id="6Mo-6j-Kpl"/>
+                                <constraint firstItem="ZvU-jc-Yya" firstAttribute="centerX" secondItem="nOh-Jk-SXS" secondAttribute="centerX" id="Hlu-2R-OEj"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationLevel="1" indentationWidth="10" reuseIdentifier="BasicCell" textLabel="9gS-qT-AaL" style="IBUITableViewCellStyleDefault" id="Hih-9y-G9r">
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hih-9y-G9r" id="cOX-F3-jyE">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9gS-qT-AaL">
+                                            <rect key="frame" x="30" y="0.0" width="364" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="EPy-vK-vNY" id="HJ5-bO-Rdz"/>
+                            <outlet property="delegate" destination="EPy-vK-vNY" id="bTw-xL-mrF"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBr-lh-uhj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="35"/>
+            <point key="canvasLocation" x="-10" y="-682"/>
         </scene>
     </scenes>
     <resources>

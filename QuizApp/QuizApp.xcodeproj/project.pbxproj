@@ -16,6 +16,8 @@
 		5790EBEE27FE6597007969A1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790EBED27FE6597007969A1 /* Question.swift */; };
 		5790EBF027FE6749007969A1 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790EBEF27FE6749007969A1 /* DataModel.swift */; };
 		5790EBF227FE6BB4007969A1 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5790EBF127FE6BB4007969A1 /* QuizViewController.swift */; };
+		BC355DBA28079D7B004A7F32 /* ScoreEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC355DB928079D7B004A7F32 /* ScoreEntry.swift */; };
+		BC355DBC28079FBA004A7F32 /* ScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC355DBB28079FBA004A7F32 /* ScoreTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		5790EBED27FE6597007969A1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		5790EBEF27FE6749007969A1 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		5790EBF127FE6BB4007969A1 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		BC355DB928079D7B004A7F32 /* ScoreEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEntry.swift; sourceTree = "<group>"; };
+		BC355DBB28079FBA004A7F32 /* ScoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 			children = (
 				5790EBDA27FE570F007969A1 /* ViewController.swift */,
 				5790EBF127FE6BB4007969A1 /* QuizViewController.swift */,
+				BC355DBB28079FBA004A7F32 /* ScoreTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 			children = (
 				5790EBED27FE6597007969A1 /* Question.swift */,
 				5790EBEF27FE6749007969A1 /* DataModel.swift */,
+				BC355DB928079D7B004A7F32 /* ScoreEntry.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,8 +178,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5790EBF027FE6749007969A1 /* DataModel.swift in Sources */,
+				BC355DBA28079D7B004A7F32 /* ScoreEntry.swift in Sources */,
 				5790EBDB27FE570F007969A1 /* ViewController.swift in Sources */,
 				5790EBEE27FE6597007969A1 /* Question.swift in Sources */,
+				BC355DBC28079FBA004A7F32 /* ScoreTableViewController.swift in Sources */,
 				5790EBF227FE6BB4007969A1 /* QuizViewController.swift in Sources */,
 				5790EBD727FE570F007969A1 /* AppDelegate.swift in Sources */,
 				5790EBD927FE570F007969A1 /* SceneDelegate.swift in Sources */,

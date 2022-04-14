@@ -9,6 +9,9 @@ import Foundation
 class DataModel{
     private static var sharedDataModel = DataModel()
     let question:[Question]
+    var nome = ""
+    var placar = 0
+    var scoreBoard = [ScoreEntry]()
     private init(){
         question = [
             Question(questionText: "Quem aparece na imagem?", imageName: "bob", options: ["Bob Esponja","Bob Esponjo","Beto Esponja","Roberto Esponja"], rightOption: 0),
